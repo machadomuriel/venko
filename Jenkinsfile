@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Clonar Repositório') {
             steps {
-                // Clona a branch main
-                git branch: 'main', url: 'git@github.com:machadomuriel/venko.git'
+                // Clona a branch main via HTTPS
+                git branch: 'main', url: 'https://github.com/machadomuriel/venko.git'
             }
         }
         stage('Build') {
