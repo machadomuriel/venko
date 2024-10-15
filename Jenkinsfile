@@ -18,13 +18,11 @@ pipeline {
                 echo 'Iniciando build...'
                 sh 'java --version'
                 sh 'apk update'
-                sh 'apk add python3'
-                sh 'python3 --version'
-                sh 'apk add py3-pip'
-                sh 'python3 -m venv .venv'
-                sh 'source .venv/bin/activate'
-                sh 'pip install robotframework'
-                sh 'robot --version'
+                sh 'apk add python3 py3-pip' // Instala o Python3 e o pip
+                sh 'python3 -m venv venv' // Cria o ambiente virtual
+                sh '. venv/bin/activate && pip install --upgrade pip' // Ativa o ambiente e atualiza o pip
+                sh '. venv/bin/activate && pip install robotframework' // Instala o Robot Framework no ambiente virtual
+                sh '. venv/bin/activate && robot --version' // Verifica a versão do Robot Framework
                 // Exemplo: sh 'make build'
             }
         }
