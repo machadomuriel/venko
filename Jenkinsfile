@@ -17,6 +17,8 @@ pipeline {
                 // Comandos para build (ajuste conforme necessário)
                 echo 'Iniciando build...'
                 sh 'java --version'
+                sh 'apk update'
+                sh 'apk add python3'
                 sh 'python3 --version'
                 // Exemplo: sh 'make build'
             }
