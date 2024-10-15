@@ -17,6 +17,7 @@ pipeline {
                     pip install --upgrade pip
                     pip install robotframework
                     robot --version
+                    deactivate
                 '''
             }
         }
@@ -26,8 +27,9 @@ pipeline {
                 sh '''
                     . venv/bin/activate
                     robot --version
-                    # Adicione seus comandos para rodar os testes aqui:
+                    # Adicione aqui o comando para rodar os testes com Robot Framework, por exemplo:
                     # robot -d results tests/
+                    deactivate
                 '''
             }
         }
@@ -36,7 +38,8 @@ pipeline {
                 echo 'Iniciando deploy...'
                 sh '''
                     . venv/bin/activate
-                    # Adicione seus comandos de deploy aqui
+                    # Adicione aqui o comando de deploy
+                    deactivate
                 '''
             }
         }
