@@ -21,7 +21,7 @@ pipeline {
                 sh 'apk add python3'
                 sh 'python3 --version'
                 sh 'apk add py3-pip'
-                sh 'python -m venv .venv'
+                sh 'python3 -m venv .venv'
                 sh 'source .venv/bin/activate'
                 sh 'pip install robotframework'
                 sh 'robot --version'
