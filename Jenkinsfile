@@ -8,27 +8,36 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Iniciando build...'
-                sh 'java --version'
-                sh 'apk update'
-                sh 'apk add python3 py3-pip'
-                sh 'python3 -m venv venv' // Cria o ambiente virtual
-                sh '. venv/bin/activate && pip install --upgrade pip' // Atualiza o pip no ambiente virtual
-                sh '. venv/bin/activate && pip install robotframework' // Instala o Robot Framework no ambiente virtual
-                sh '. venv/bin/activate && robot --version' // Verifica a instalação do Robot Framework
+                sh '''
+                    java --version
+                    apk update
+                    apk add python3 py3-pip
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install --upgrade pip
+                    pip install robotframework
+                    robot --version
+                '''
             }
         }
         stage('Testes') {
             steps {
                 echo 'Rodando testes...'
-                sh '. venv/bin/activate && robot --version' // Garante que o Robot Framework está rodando no ambiente virtual
-                // Adicione o comando para rodar os testes do Robot aqui:
-                // sh '. venv/bin/activate && robot -d results tests/'
+                sh '''
+                    . venv/bin/activate
+                    robot --version
+                    # Adicione seus comandos para rodar os testes aqui:
+                    # robot -d results tests/
+                '''
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Iniciando deploy...'
-                // Comandos de deploy aqui
+                sh '''
+                    . venv/bin/activate
+                    # Adicione seus comandos de deploy aqui
+                '''
             }
         }
     }
