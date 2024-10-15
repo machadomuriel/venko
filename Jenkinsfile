@@ -16,8 +16,8 @@ pipeline {
             steps {
                 // Comandos para build (ajuste conforme necessário)
                 echo 'Iniciando build...'
-                java --version
-                python3 --version
+                sh 'java --version'
+                sh 'python3 --version'
                 // Exemplo: sh 'make build'
             }
         }
