@@ -7,31 +7,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Iniciando build...'
                 sh '''
-                    java --version
-                    # Atualiza os pacotes do sistema
-                    # apk update
-                    # Instala Python e Pip, se necessário
-                    # apk add python3 py3-pip
                     python3 -m venv venv
                     . venv/bin/activate
-                    # Atualiza o pip
-                    pip install --upgrade pip
-                    # Instala dependências a partir do arquivo requirements.txt
                     pip install -r requirements.txt
                 '''
             }
         }
         stage('Testes') {
             steps {
-                echo 'Rodando testes...'
                 sh '''
                     . venv/bin/activate
-                    # Executa os testes com Robot Framework
                     robot exemplo_teste.robot 
-                    # Alternativa: rodar todos os testes em uma pasta específica
-                    # robot -d results tests/
                 '''
             }
         }
@@ -39,7 +26,6 @@ pipeline {
             steps {
                 echo 'Iniciando deploy...'
                 sh '''
-                    # . venv/bin/activate
                     # Comandos para realizar o deploy
                 '''
             }
