@@ -25,7 +25,7 @@ pipeline {
             steps {
                 echo 'Rodando testes...'
                 sh '''
-                    # . venv/bin/activate
+                    . venv/bin/activate
                     robot exemplo_teste.robot 
                     # robot --version
                     # Adicione aqui o comando para rodar os testes com Robot Framework, por exemplo:
