@@ -22,13 +22,5 @@ pipeline {
                 '''
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Iniciando deploy...'
-                sh '''
-                    # Comandos para realizar o deploy
-                '''
-            }
-        }
     }
 }
