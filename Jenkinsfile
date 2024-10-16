@@ -25,11 +25,11 @@ pipeline {
             steps {
                 echo 'Rodando testes...'
                 sh '''
-                    . venv/bin/activate
-                    robot --version
+                    # . venv/bin/activate
+                    # robot --version
                     # Adicione aqui o comando para rodar os testes com Robot Framework, por exemplo:
                     # robot -d results tests/
-                    deactivate
+                    # deactivate
                 '''
             }
         }
@@ -37,9 +37,9 @@ pipeline {
             steps {
                 echo 'Iniciando deploy...'
                 sh '''
-                    . venv/bin/activate
+                    # . venv/bin/activate
                     # Adicione aqui o comando de deploy
-                    deactivate
+                    # deactivate
                 '''
             }
         }
