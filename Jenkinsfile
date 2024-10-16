@@ -1,19 +1,16 @@
 pipeline {
     agent { 
         node {
-            label 'docker-agent-alpine'
+            label 'jenkins-agent-python'
         }
     }
     stages {
         stage('Build') {
             steps {
                 sh '''
-                    apk update
-                    apk add python3 py3-pip
                     python3 -m venv venv
                     . venv/bin/activate
-                    pip install --upgrade pip
-                    pip install robotframework
+                    pip install -r requirements.txt
                 '''
             }
         }
