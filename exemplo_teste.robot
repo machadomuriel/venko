@@ -16,6 +16,12 @@ Teste Simples
     Log    Iniciando teste de soma
     Calcular soma    ${NUMERO_1}    ${NUMERO_2}
 
+Teste Simples2
+    [Documentation]    Teste simples que soma duas variáveis
+    [Tags]    exemplosimples
+    Log    Iniciando teste de soma
+    Calcular soma2    ${NUMERO_1}    ${NUMERO_2}
+
 *** Keywords ***
 Calcular soma
     [Arguments]    ${arg1}    ${arg2}
@@ -25,4 +31,4 @@ Calcular soma
 Calcular soma2
     [Arguments]    ${arg1}    ${arg2}
     ${resultado}=    Evaluate    ${NUMERO_1} + ${NUMERO_2}
-    Should Be Equal As Numbers    ${resultado}    29
+    Should Be Equal As Numbers    ${resultado}    30
