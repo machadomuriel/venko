@@ -18,14 +18,9 @@ pipeline {
             steps {
                 sh '''
                     . venv/bin/activate
-                    robot exemplo_teste.robot
+                    robot exemplo_teste.robot 
                 '''
             }
-        }
-    }
-    post {
-        always {
-            robot resultPath: '.', outputPath: 'output.xml', reportFileName: 'report.html', logFileName: 'log.html'
         }
     }
 }
