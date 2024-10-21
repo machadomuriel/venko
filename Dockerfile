@@ -1,4 +1,4 @@
-#docker build -t jenkins-agent:python .
+#docker build -t jenkins-agent:robot .
 FROM jenkins/agent:alpine-jdk21
 USER root
 

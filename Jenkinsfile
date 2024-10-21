@@ -5,7 +5,7 @@ pipeline {
         }
     }
     stages {
-        stage('Testes') {
+        stage('Running-Tests') {
             steps {
                 sh '''
                     robot exemplo_teste.robot
