@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         node {
-            label 'jenkins-agent-python-robot'
+            label 'jenkins-agent-robot'
         }
     }
     stages {
