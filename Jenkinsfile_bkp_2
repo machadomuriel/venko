@@ -25,6 +25,7 @@ pipeline {
                 attachmentsPattern: 'report.html, log.html, output.xml',
                 from: 'machadomuriel@gmail.com',
                 to: '$DEFAULT_RECIPIENTS',
+                mimeType: 'text/html'
             )
         }
         failure {
@@ -38,6 +39,7 @@ pipeline {
                 attachmentsPattern: 'report.html, log.html, output.xml',
                 from: 'machadomuriel@gmail.com',
                 to: '$DEFAULT_RECIPIENTS',
+                mimeType: 'text/html'
             )
         }
         always {
