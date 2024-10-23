@@ -17,10 +17,10 @@ pipeline {
         success {
             emailext(
                 to: '$DEFAULT_RECIPIENTS',
-                subject: "$JOB_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!",
+                subject: "Build Success: ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}",
                 body: """
-                $JOB_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
-                Check console output at $BUILD_URL to view the results.
+                Build was successful!
+                Please find the attached test reports.
                 """,
                 attachLog: true,
                 attachmentsPattern: 'report.html, log.html, output.xml'
