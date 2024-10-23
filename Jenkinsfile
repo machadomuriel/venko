@@ -23,7 +23,7 @@ pipeline {
                 """,
                 attachLog: true,
                 attachmentsPattern: 'report.html, log.html, output.xml',
-                recipientProviders: [[$class: 'CulpritsRecipientProvider']]
+                to: '$DEFAULT_RECIPIENTS'
             )
         }
         failure {
@@ -35,7 +35,7 @@ pipeline {
                 """,
                 attachLog: true,
                 attachmentsPattern: 'report.html, log.html, output.xml',
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+                to: '$DEFAULT_RECIPIENTS'
             )
         }
         always {
