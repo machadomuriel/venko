@@ -23,7 +23,8 @@ pipeline {
                 """,
                 attachLog: true,
                 attachmentsPattern: 'report.html, log.html, output.xml',
-                to: '$DEFAULT_RECIPIENTS'
+                to: '$DEFAULT_RECIPIENTS',
+                mimeType: 'text/html'
             )
         }
         failure {
@@ -35,7 +36,8 @@ pipeline {
                 """,
                 attachLog: true,
                 attachmentsPattern: 'report.html, log.html, output.xml',
-                to: '$DEFAULT_RECIPIENTS'
+                to: '$DEFAULT_RECIPIENTS',
+                mimeType: 'text/html'
             )
         }
         always {
