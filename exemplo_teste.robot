@@ -20,4 +20,4 @@ Teste Simples
 Calcular soma
     [Arguments]    ${arg1}    ${arg2}
     ${resultado}=    Evaluate    ${NUMERO_1} + ${NUMERO_2}
-    Should Be Equal As Numbers    ${resultado}    30
+    Should Be Equal As Numbers    ${resultado}    29
