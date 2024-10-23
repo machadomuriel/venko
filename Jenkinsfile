@@ -23,6 +23,7 @@ pipeline {
                 """,
                 attachLog: true,
                 attachmentsPattern: 'report.html, log.html, output.xml',
+                from: 'machadomuriel@gmail.com',
                 to: '$DEFAULT_RECIPIENTS',
                 mimeType: 'text/html'
             )
@@ -36,6 +37,7 @@ pipeline {
                 """,
                 attachLog: true,
                 attachmentsPattern: 'report.html, log.html, output.xml',
+                from: 'machadomuriel@gmail.com',
                 to: '$DEFAULT_RECIPIENTS',
                 mimeType: 'text/html'
             )
